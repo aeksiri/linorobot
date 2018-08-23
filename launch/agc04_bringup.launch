@@ -1,0 +1,27 @@
+<launch>
+    
+    <!-- Run denso_agc02 bringup.launch -->
+    <include file="$(find linorobot)/launch/bringup.launch" />
+    
+    
+    <!-- Run Openni_launch openni.launch -->
+    <include file="$(find openni_launch)/launch/openni.launch" />
+
+    <!-- Run rbx2_ar_tags ar_indiv_kinect.launch -->
+    <include file="$(find rbx2_ar_tags)/launch/ar_indiv_kinect.launch" />
+
+    <!-- Run rbx2_ar_tags ar_tag_cog.launch -->
+    <include file="$(find rbx2_ar_tags)/launch/ar_tags_cog.launch" />
+
+    
+    <!-- Run denso_agc02 navigate.launch -->
+    <include file="$(find linorobot)/launch/navigate.launch" />
+
+    <!-- Run denso_agc02 EPS32 nodes -->
+    <include file="$(find rosserial_server)/launch/socket.launch" />
+
+    <!-- Start Simple Controller -->
+    <!--node pkg="simple_controller" name="agc04_tasks" type="agc04_tasks_scheduler_V10.py" output="screen" /-->
+
+
+</launch>
