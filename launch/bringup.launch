@@ -5,6 +5,18 @@
         <param name="baud" value="115200" />
     </node>
 
+    <!-- Start ROS communication between the robot's computer and iocon1 -->
+    <node pkg="rosserial_python" name="iocon1" type="serial_node.py" output="screen">
+        <param name="port" value="/dev/iocon1" />
+        <param name="baud" value="115200" />
+    </node>    
+    
+    <!-- Start ROS communication between the robot's computer and iocon2 -->
+    <node pkg="rosserial_python" name="iocon1" type="serial_node.py" output="screen">
+        <param name="port" value="/dev/iocon2" />
+        <param name="baud" value="115200" />
+    </node>
+    
     <!-- IMU Relay and Filter -->
     <include file="$(find linorobot)/launch/include/imu/imu.launch" />
 
